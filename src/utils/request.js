@@ -14,7 +14,7 @@ export function  request(options,token=true,isMsg=false) {
   Taro.showLoading({
     title: '加载中',
     icon: 'loading'
-  })
+  });
   /**
    * url：api
    * method:请求方式

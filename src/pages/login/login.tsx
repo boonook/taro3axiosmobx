@@ -1,9 +1,8 @@
-import { ComponentType } from 'react'
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View } from '@tarojs/components'
-import { observer, inject } from '@tarojs/mobx'
-import { AtButton,AtMessage,AtInput } from 'taro-ui';
+import { Component } from 'react'
+import Taro from '@tarojs/taro'
+import { View,Text } from '@tarojs/components'
 import './login.less'
+import React from 'react';
 
 type PageStateProps = {
   UserStore: {
@@ -19,31 +18,16 @@ interface Login {
   props: PageStateProps;
 }
 
-@inject('UserStore')
-@observer
 class Login extends Component {
   state = {
     value: '登陆界面',
     userName: '',
     userPwd:'',
     loading:false
-  }
-  /**
-   * 指定config的类型声明为: Taro.Config
-   *
-   * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-   * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-   * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
-   */
-  config: Config = {
-    navigationBarTitleText: '武汉大海科技'
-  }
+  };
 
   componentWillMount () { }
 
-  componentWillReact () {
-
-  }
 
   componentDidMount () {
 
@@ -51,15 +35,12 @@ class Login extends Component {
 
   componentWillUnmount () { }
 
-  componentDidShow () { }
-
-  componentDidHide () { }
-
   handleChange=(value)=>{
     this.setState({
       userName:value
     })
-  }
+  };
+
   UserPwdChange=(value)=>{
     this.setState({
       userPwd:value
@@ -75,13 +56,6 @@ class Login extends Component {
           'type': 'error',
         })
       }else{
-        let params={
-          isLogin:true,
-          userInfo:{userName,userPwd},
-          uid:userName,
-        };
-        // console.log(params);
-        this.props.UserStore.changeIsLogin(params);
         Taro.switchTab({
           url: '/pages/index/index'
         })
@@ -101,39 +75,10 @@ class Login extends Component {
   render () {
     return (
       <View className='container'>
-        <AtMessage />
-        <View className='title_box'>
-          {this.state.value}
-        </View>
-        <View>
-          <AtInput
-              className={'input_item'}
-              name='userName'
-              title=''
-              type='text'
-              placeholder='用户名'
-              value={this.state.userName}
-              onChange={this.handleChange.bind(this)}
-          />
-        </View>
-       <View>
-         <AtInput
-             className={'input_item'}
-             name='userPwd'
-             title=''
-             type='text'
-             placeholder='密码'
-             value={this.state.userPwd}
-             onChange={this.UserPwdChange.bind(this)}
-         />
-       </View>
-      <View className={'btn_box'}>
-        <AtButton className='submit_btn' formType='submit' onClick={()=>{this.onLogin()}} type='primary'>登陆</AtButton>
-      </View>
-        {/*<AtButton className='submit_btn' formType='submit' onClick={()=>{this.weixinLofin()}} type='primary'>微信快捷登录</AtButton>*/}
+        <Text>登录界面</Text>
       </View>
     )
   }
 }
 
-export default Login  as ComponentType
+export default Login

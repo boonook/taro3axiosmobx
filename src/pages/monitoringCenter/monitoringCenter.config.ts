@@ -6,5 +6,5 @@
  * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
  */
 export default {
-  navigationBarTitleText: '监控中心'
+  navigationBarTitleText: '监控'
 }
