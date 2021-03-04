@@ -1,22 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Taro from "@tarojs/taro";
 import { View, Text,Image } from '@tarojs/components'
-import Taro from '@tarojs/taro';
 import './index.less'
 class Index extends Component {
+  state = {
+    show:false
+  };
+
   componentWillMount () { }
 
-  componentDidMount () { }
+  componentDidMount () {
+    Taro.startPullDownRefresh().then(res=>{
+      console.log(res)
+    })
+  }
 
   componentWillUnmount () { }
-
-  increment = () => {
-    Taro.showLoading({
-      title: '加载中',
-    });
-    setTimeout(()=>{
-      Taro.hideLoading()
-    },2000)
-  };
 
 
   render () {

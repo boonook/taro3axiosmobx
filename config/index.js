@@ -56,7 +56,7 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
-    esnextModules: ['taro-ui'],
+    esnextModules: ['taro-ui','taro-cropper'],
     postcss: {
       autoprefixer: {
         enable: true,
