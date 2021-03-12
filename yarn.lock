@@ -7774,6 +7774,11 @@ qs@6.7.0:
   resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha1-QdwaAV49WB8WIXdr4xr7KHapsbw=
 
+qs@^6.7.0:
+  version "6.9.6"
+  resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/qs/-/qs-6.9.6.tgz#26ed3c8243a431b2924aca84cc90471f35d5a0ee"
+  integrity sha1-Ju08gkOkMbKSSsqEzJBHHzXVoO4=
+
 qs@~6.5.2:
   version "6.5.2"
   resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
@@ -9376,6 +9381,15 @@ taro-cropper@^1.2.4:
   version "1.2.4"
   resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/taro-cropper/-/taro-cropper-1.2.4.tgz#3146d32eb7d78bb5dcb2f0bffa9d4529c52888b2"
   integrity sha1-MUbTLrfXi7XcsvC/+p1FKcUoiLI=
+
+taro-listview@^2.0.4:
+  version "2.0.4"
+  resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/taro-listview/-/taro-listview-2.0.4.tgz#dc2e114eefa249bb8f6a78fdc5d3277e615005d5"
+  integrity sha1-3C4RTu+iSbuPanj9xdMnfmFQBdU=
+  dependencies:
+    "@babel/runtime" "^7.11.2"
+    classnames "^2.2.6"
+    qs "^6.7.0"
 
 taro-ui@^3.0.0-alpha.10:
   version "3.0.0-alpha.10"
