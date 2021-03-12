@@ -1,5 +1,5 @@
 import React from 'react'
-import {initialState} from "components/list-view/init";
+import {initialState} from "./init";
 
 export interface Props extends React.Props<any> {
   lazy?: boolean | string;

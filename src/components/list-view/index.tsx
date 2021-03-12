@@ -62,8 +62,8 @@ class ListView extends Component<Props, State> {
             .boundingClientRect()
             .exec(res => {
               const { lazyStorage } = this.props;
-              tools.updateScrollHeight(this.lazyKey, res[0].height, lazyStorage)
-              this.lazyViewHeight = res[0].height
+              tools.updateScrollHeight(this.lazyKey, res[0].height, lazyStorage);
+              this.lazyViewHeight = res[0].height;
             })
         }, 0)
       })
@@ -83,7 +83,8 @@ class ListView extends Component<Props, State> {
     switch (type) {
       case "touchstart": {
         this.touchScrollTop = this.state.scrollTop;
-        (this.needPullDown = true), (this.startY = touches[0].clientY);
+        this.needPullDown = true;
+        this.startY = touches[0].clientY;
         break;
       }
       // 拖动方向不符合的不处理
